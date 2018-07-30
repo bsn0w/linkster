@@ -3,17 +3,13 @@ const client = new Discord.Client();
 const fs = require("fs");
 const http = require('http');
 const express = require('express');
-
 const app = express();
-var assets = require('./assets');
 
 const discord_token = process.env.TOKEN;
 const prefix = process.env.PREFIX;
 
 const newUsers = new Discord.Collection();
 var botMembers = 0;
-
-app.use("/assets", assets);
 
 app.get("/", (request, response) => {
   var D = new Date();
