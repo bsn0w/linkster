@@ -1,17 +1,13 @@
 const Discord = module.require("discord.js");
 
 module.exports.run = async (client, message, args) => {
-    if (!message.mentions.users.size) {
-        return await message.channel.send({embed: {
-            color: 3447003,
-            author: {
-                name: message.author.username + "'s Avatar",
-                icon_url: message.author.displayAvatarURL
-            },
-            image: {
-                url: message.author.displayAvatarURL
-            }
-        }});
+    if (!message.mentions.users.size) {     
+        let embed = new Discord.RichEmbed()
+          .setColor("4253f4")
+          .setAutor(message.author.username + "'s Avatar", message.author.displayAvatarURL)
+          .setImage(message.author.displayAvatarURL)  
+        
+        message.channel.send(embed)
     }
 
     const avatarList = message.mentions.users.map(user => {
@@ -22,16 +18,12 @@ module.exports.run = async (client, message, args) => {
         let Username = avatarList[i].split(',')[0];
         let AvatarURL = avatarList[i].split(",").pop();
 
-        await message.channel.send({embed: {
-            color: 3447003,
-            author: {
-                name: Username + "'s Avatar",
-                icon_url: AvatarURL
-            },
-            image: {
-                url: AvatarURL
-            }
-        }});
+        let embed = new Discord.RichEmbed()
+          .setColor("4253f4")
+          .setAutor(Username + "'s Avatar", AvatarURL)
+          .setImage(AvatarURL)
+        
+        message.channel.send(embed)
     }
 }
 
