@@ -9,7 +9,7 @@ const discord_token = process.env.TOKEN;
 const prefix = process.env.PREFIX;
 
 const newUsers = new Discord.Collection();
-var botMembers = 0;
+//var botMembers = 0;
 
 app.get("/", (request, response) => {
   response.sendStatus(200);
@@ -69,6 +69,7 @@ client.on("guildMemberRemove", (member) => {
 });
 
 client.on("ready", () => {
+  /*
   client.guilds.forEach((guild) => {
     var members = guild.memberCount;
     
@@ -88,6 +89,7 @@ client.on("ready", () => {
     var randomMessage = Messages[Math.floor(Math.random()*Messages.length)];
     client.user.setActivity(randomMessage);
   }, 4666);
+  */
 });
 
 client.on("message", message => {
