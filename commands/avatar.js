@@ -4,7 +4,7 @@ module.exports.run = async (client, message, args) => {
     if (!message.mentions.users.size) {     
         let embed = new Discord.RichEmbed()
           .setColor("4253f4")
-          .setAutor(message.author.username + "'s Avatar", message.author.displayAvatarURL)
+          .setAuthor(message.author.username + "'s Avatar", message.author.displayAvatarURL)
           .setImage(message.author.displayAvatarURL)  
         
         message.channel.send(embed)
@@ -20,7 +20,7 @@ module.exports.run = async (client, message, args) => {
 
         let embed = new Discord.RichEmbed()
           .setColor("4253f4")
-          .setAutor(Username + "'s Avatar", AvatarURL)
+          .setAuthor(Username + "'s Avatar", AvatarURL)
           .setImage(AvatarURL)
         
         message.channel.send(embed)
